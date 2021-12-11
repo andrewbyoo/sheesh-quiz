@@ -14,14 +14,14 @@
     </aside>
   </header>
 
-  <article>
+  <section class="visible" id="startPage">
     <h1>Sheesh quiz</h1>
     <p>Lorem Ipsum sheesh quiz start page</p>
-    <button class="startButton">Take the quiz</button>
-  </article>
+    <button id="startButton">Take the quiz</button>
+  </section>
 
   <main>
-    <section class="quizItems" id="q1">
+    <section class="hidden" id="q1">
       <h1 class="questions">Question 1 text</h1>
       <ol class="answers">
         <li id="q1a1"><button class="incorrect">Answer 1</button></li>
@@ -31,7 +31,7 @@
       </ol>
     </section>
 
-    <section class="quizItems" id="q2">
+    <section class="hidden" id="q2">
       <h1 class="questions">Question 2 text</h1>
       <ol class="answers">
         <li id="q2a1"><button class="incorrect">Answer 1</button></li>
@@ -41,7 +41,7 @@
       </ol>
     </section>
 
-    <section class="quizItems" id="q3">
+    <section class="hidden" id="q3">
       <h1 class="questions">Question 3 text</h1>
       <ol class="answers">
         <li id="q3a1"><button class="incorrect">Answer 1</button></li>
@@ -51,7 +51,7 @@
       </ol>
     </section>
 
-    <section class="quizItems" id="q4">
+    <section class="hidden" id="q4">
       <h1 class="questions">Question 4 text</h1>
       <ol class="answers">
         <li id="q4a1"><button class="incorrect">Answer 1</button></li>
@@ -61,7 +61,7 @@
       </ol>
     </section>
 
-    <section class="quizItems" id="q5">
+    <section class="hidden" id="q5">
       <h1 class="questions">Question 5 text</h1>
         <ol class="answers">
           <li id="q5a1"><button class="incorrect">Answer 1</button></li>
@@ -72,25 +72,25 @@
     </section>
   </main>
 
-  <article>
+  <section class="hidden" id="endPage">
     <h1>Quiz Complete!</h1>
     <p>Your final score is ____.</p>
-    <section>
+    <article>
       <p>User Initials: </p>
       <input type="text" name="initials" id="initials">
       <button id="logScore">Submit</button>
-    </section>
-  </article>
+    </article>
+  </section>
 
-  <article>
+  <section class="hidden">
     <h1>Scoreboard</h1>
     <button class="startButton">Restart the quiz</button>
     <button id="scoreClear">Clear scoreboard</button>
-  </article>
+  </section>
 
   <footer>
-    <p>Correct answer message</p>
-    <p>Incorrect answer message</p>
+    <p class="hidden">Correct answer message</p>
+    <p class="hidden">Incorrect answer message</p>
   </footer>
 
   <script src="./assets/js/script.js"></script>
