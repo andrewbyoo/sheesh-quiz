@@ -1,4 +1,9 @@
-/* Sets quiz sections to not be display */
-/* section {
+/* Sets hidden class to not be display */
+.hidden {
   display: none;
-} */
+}
+
+/* Sets visible class to display element */
+.visible {
+  display: block;
+}
