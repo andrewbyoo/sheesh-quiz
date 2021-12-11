@@ -16,7 +16,7 @@ startButton.addEventListener("click", function() {
   quizContainer.setAttribute("class", "visible");
 })
 
-var questionInfo = {
+var questionInfo = [
   {
     question: "Lorem Ipsum Question 1",
     options: ["Lorem Ipsum Answer 1", "Lorem Ipsum Answer 2", "Lorem Ipsum Answer 3", "Lorem Ipsum Answer 4"],
@@ -42,4 +42,6 @@ var questionInfo = {
     options: ["Lorem Ipsum Answer 1", "Lorem Ipsum Answer 2", "Lorem Ipsum Answer 3", "Lorem Ipsum Answer 4"],
     correctAnswer: "Lorem Ipsum Answer 4"
   }
-}
+]
+
+questions.innerHTML = questionInfo[0].question;
