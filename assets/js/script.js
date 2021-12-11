@@ -9,3 +9,4 @@ var q4 = document.getElementById("q4");
 var q5 = document.getElementById("q5");
 var correct = document.getElementsByClassName("correct");
 var incorrect = document.getElementsByClassName("incorrect");
+var questionsArray = [q1, q2, q3, q4, q5]
