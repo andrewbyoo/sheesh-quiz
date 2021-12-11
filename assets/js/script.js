@@ -15,3 +15,31 @@ startButton.addEventListener("click", function() {
   startPage.setAttribute("class", "hidden");
   quizContainer.setAttribute("class", "visible");
 })
+
+var questionInfo = {
+  {
+    question: "Lorem Ipsum Question 1",
+    options: ["Lorem Ipsum Answer 1", "Lorem Ipsum Answer 2", "Lorem Ipsum Answer 3", "Lorem Ipsum Answer 4"],
+    correctAnswer: "Lorem Ipsum Answer 4"
+  },
+  {
+    question: "Lorem Ipsum Question 2",
+    options: ["Lorem Ipsum Answer 1", "Lorem Ipsum Answer 2", "Lorem Ipsum Answer 3", "Lorem Ipsum Answer 4"],
+    correctAnswer: "Lorem Ipsum Answer 4"
+  },
+  {
+    question: "Lorem Ipsum Question 3",
+    options: ["Lorem Ipsum Answer 1", "Lorem Ipsum Answer 2", "Lorem Ipsum Answer 3", "Lorem Ipsum Answer 4"],
+    correctAnswer: "Lorem Ipsum Answer 4"
+  },
+  {
+    question: "Lorem Ipsum Question 4",
+    options: ["Lorem Ipsum Answer 1", "Lorem Ipsum Answer 2", "Lorem Ipsum Answer 3", "Lorem Ipsum Answer 4"],
+    correctAnswer: "Lorem Ipsum Answer 4"
+  },
+  {
+    question: "Lorem Ipsum Question 5",
+    options: ["Lorem Ipsum Answer 1", "Lorem Ipsum Answer 2", "Lorem Ipsum Answer 3", "Lorem Ipsum Answer 4"],
+    correctAnswer: "Lorem Ipsum Answer 4"
+  }
+}
