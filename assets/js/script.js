@@ -11,13 +11,7 @@ var btn4 = document.getElementById("btn4");
 var endPage = document.getElementById("endPage");
 var clearBoard = document.getElementById("scoreClear");
 
-var startPageMode = "visible"
-
 startButton.addEventListener("click", function() {
-
-  if (startPageMode === "visible") {
-    startPageMode = "hidden"
-    startPage.setAttribute("class", "hidden");
-    .setAttribute("class", "visible");
-  }
+  startPage.setAttribute("class", "hidden");
+  quizContainer.setAttribute("class", "visible");
 })
