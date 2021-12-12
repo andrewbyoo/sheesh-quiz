@@ -50,83 +50,6 @@ startButton.addEventListener("click", function () {
   quiz();
 })
 
-// Answer 1 button
-btn1.addEventListener("click", function () {
-  if (btn1.innerHTML == questionInfo[i-1].correctAnswer) {
-    correct.setAttribute("class", "visible");
-    setTimeout(function() {
-      correct.setAttribute("class", "hidden");
-    }, 2000);
-    incorrect.setAttribute("class", "hidden");
-  } else {
-    incorrect.setAttribute("class", "visible");
-    setTimeout(function() {
-      incorrect.setAttribute("class", "hidden");
-    }, 2000);
-    correct.setAttribute("class", "hidden");
-    // Add code to remove 5 seconds from timer and once tested and working, add to other buttons
-  }
-  if (i == questionInfo.length) {
-    showEndScreen();
-  } else {
-    quiz();
-  }
-})
-
-// Answer 2 button
-btn2.addEventListener("click", function () {
-  if (btn2.innerHTML == questionInfo[i-1].correctAnswer) {
-    correct.setAttribute("class", "visible");
-    setTimeout(function() {
-      correct.setAttribute("class", "hidden");
-    }, 2000);
-    incorrect.setAttribute("class", "hidden");
-  } else {
-    incorrect.setAttribute("class", "visible");
-    setTimeout(function() {
-      incorrect.setAttribute("class", "hidden");
-    }, 2000);
-    correct.setAttribute("class", "hidden");
-  }
-  quiz();
-})
-
-// Answer 3 button
-btn3.addEventListener("click", function () {
-  if (btn3.innerHTML == questionInfo[i-1].correctAnswer) {
-    correct.setAttribute("class", "visible");
-    setTimeout(function() {
-      correct.setAttribute("class", "hidden");
-    }, 2000);
-    incorrect.setAttribute("class", "hidden");
-  } else {
-    incorrect.setAttribute("class", "visible");
-    setTimeout(function() {
-      incorrect.setAttribute("class", "hidden");
-    }, 2000);
-    correct.setAttribute("class", "hidden");
-  }
-  quiz();
-})
-
-// Answer 4 button
-btn4.addEventListener("click", function () {
-  if (btn4.innerHTML == questionInfo[i-1].correctAnswer) {
-    correct.setAttribute("class", "visible");
-    setTimeout(function() {
-      correct.setAttribute("class", "hidden");
-    }, 2000);
-    incorrect.setAttribute("class", "hidden");
-  } else {
-    incorrect.setAttribute("class", "visible");
-    setTimeout(function() {
-      incorrect.setAttribute("class", "hidden");
-    }, 2000);
-    correct.setAttribute("class", "hidden");
-  }
-  quiz();
-})
-
 // Function for displaying the each quiz question
 function quiz() {
   questions.innerHTML = questionInfo[i].question;
@@ -137,6 +60,86 @@ function quiz() {
   i++;
 }
 
+// Answer 1 button
+btn1.addEventListener("click", function () {
+  if (btn1.innerHTML == questionInfo[i-1].correctAnswer) {
+    answeredCorrectly()
+  } else {
+    answeredIncorrectly()
+    // Add code to remove 5 seconds from timer and once tested and working, add to other buttons
+  }
+
+  if (i == questionInfo.length) {
+    showEndScreen();
+  } else {
+    quiz();
+  }
+})
+
+// Answer 2 button
+btn2.addEventListener("click", function () {
+  if (btn2.innerHTML == questionInfo[i-1].correctAnswer) {
+    answeredCorrectly()
+  } else {
+    answeredIncorrectly()
+  }
+
+  if (i == questionInfo.length) {
+    showEndScreen();
+  } else {
+    quiz();
+  }
+})
+
+// Answer 3 button
+btn3.addEventListener("click", function () {
+  if (btn3.innerHTML == questionInfo[i-1].correctAnswer) {
+    answeredCorrectly()
+  } else {
+    answeredIncorrectly()
+  }
+
+  if (i == questionInfo.length) {
+    showEndScreen();
+  } else {
+    quiz();
+  }
+})
+
+// Answer 4 button
+btn4.addEventListener("click", function () {
+  if (btn4.innerHTML == questionInfo[i-1].correctAnswer) {
+    answeredCorrectly()
+  } else {
+    answeredIncorrectly()
+  }
+
+  if (i == questionInfo.length) {
+    showEndScreen();
+  } else {
+    quiz();
+  }
+})
+
+// What occurs when a question is answered correctly
+function answeredCorrectly() {
+  correct.setAttribute("class", "visible");
+  setTimeout(function() {
+    correct.setAttribute("class", "hidden");
+  }, 2000);
+  incorrect.setAttribute("class", "hidden");
+}
+
+// What occurs when a question is answered incorrectly
+function answeredIncorrectly() {
+  incorrect.setAttribute("class", "visible");
+  setTimeout(function() {
+    incorrect.setAttribute("class", "hidden");
+  }, 2000);
+  correct.setAttribute("class", "hidden");
+}
+
+// Function to hide quiz and show the end screen
 function showEndScreen() {
   quizContainer.setAttribute("class", "hidden");
   endPage.setAttribute("class", "visible");
