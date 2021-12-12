@@ -17,6 +17,7 @@ var endPage = document.getElementById("endPage");
 var finalScore = document.getElementById("finalScore");
 var initials = document.getElementById("initials");
 var logScoreBtn = document.getElementById("logScoreBtn");
+var scoreStorage = [];
 var scoreboard = document.getElementById("scoreboard");
 var clearBoard = document.getElementById("scoreClear");
 var i = 0;
@@ -197,13 +198,31 @@ logScoreBtn.addEventListener("click", function () {
   var initialsValue = initials.value;
 
   if (initialsValue === "") {
-    initials.setAttribute("placeholder", "Initials are required")
+    initials.setAttribute("placeholder", "Initials are required");
     initials.style.borderColor = "red";
+  } else {
+    initials.setAttribute("placeholder", "");
+    initials.style.borderColor = "";
+    logScore();
   }
 })
 
 function logScore() {
-  // Add code to store score in JSON
+  var previousScoreStorage = JSON.parse(localStorage.getItem("scoreStorage"));
+
+  if (previousScoreStorage == null) {
+    previousScoreStorage = [];
+  }
+
+  var newScore = {
+    "participant": initialsValue,
+    "score": timeLeft
+  };
+
+  localStorage.setItem("newScore", JSON.stringify(newScore));
+
+  previousScoreStorage.push(newScore);
+  localStorage.setItem("scoreStorage", JSON.stringify(previousScoreStorage));
 }
 
 function showScoreboard() {
