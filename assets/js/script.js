@@ -15,6 +15,8 @@ var correct = document.getElementById("correct");
 var incorrect = document.getElementById("incorrect");
 var endPage = document.getElementById("endPage");
 var finalScore = document.getElementById("finalScore");
+var initials = document.getElementById("initials");
+var logScoreBtn = document.getElementById("logScoreBtn");
 var scoreboard = document.getElementById("scoreboard");
 var clearBoard = document.getElementById("scoreClear");
 var i = 0;
@@ -188,6 +190,20 @@ function showEndScreen() {
   clearInterval(timeInterval);
   timeLeft.innerHTML = timeScore;
   finalScore.innerHTML = "Your final score is " + timeScore + ".";
+}
+
+// Button function to log final score
+logScoreBtn.addEventListener("click", function () {
+  var initialsValue = initials.value;
+
+  if (initialsValue === "") {
+    initials.setAttribute("placeholder", "Initials are required")
+    initials.style.borderColor = "red";
+  }
+})
+
+function logScore() {
+  // Add code to store score in JSON
 }
 
 function showScoreboard() {
