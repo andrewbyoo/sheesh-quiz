@@ -62,11 +62,12 @@ function quiz() {
 
 // Answer 1 button
 btn1.addEventListener("click", function () {
+
+  // Determines if answer is correct or incorrect
   if (btn1.innerHTML == questionInfo[i-1].correctAnswer) {
     answeredCorrectly()
   } else {
     answeredIncorrectly()
-    // Add code to remove 5 seconds from timer and once tested and working, add to other buttons
   }
 
   endTestCheck()
@@ -74,6 +75,8 @@ btn1.addEventListener("click", function () {
 
 // Answer 2 button
 btn2.addEventListener("click", function () {
+
+  // Determines if answer is correct or incorrect
   if (btn2.innerHTML == questionInfo[i-1].correctAnswer) {
     answeredCorrectly()
   } else {
@@ -85,6 +88,8 @@ btn2.addEventListener("click", function () {
 
 // Answer 3 button
 btn3.addEventListener("click", function () {
+
+  // Determines if answer is correct or incorrect
   if (btn3.innerHTML == questionInfo[i-1].correctAnswer) {
     answeredCorrectly()
   } else {
@@ -96,6 +101,8 @@ btn3.addEventListener("click", function () {
 
 // Answer 4 button
 btn4.addEventListener("click", function () {
+
+  // Determines if answer is correct or incorrect
   if (btn4.innerHTML == questionInfo[i-1].correctAnswer) {
     answeredCorrectly()
   } else {
@@ -105,7 +112,7 @@ btn4.addEventListener("click", function () {
   endTestCheck()
 })
 
-// What occurs when a question is answered correctly
+// When answered correctly, show congratulatory message for 2 seconds and hide the incorrect message if still displayed
 function answeredCorrectly() {
   correct.setAttribute("class", "visible");
   setTimeout(function() {
@@ -114,15 +121,17 @@ function answeredCorrectly() {
   incorrect.setAttribute("class", "hidden");
 }
 
-// What occurs when a question is answered incorrectly
+// When answered incorrectly, show failure message for 2 seconds and hide the congratulatory message if still displayed
 function answeredIncorrectly() {
   incorrect.setAttribute("class", "visible");
   setTimeout(function() {
     incorrect.setAttribute("class", "hidden");
   }, 2000);
   correct.setAttribute("class", "hidden");
+  // Add code to remove 5 seconds from timer and once tested and working, add to other buttons
 }
 
+// When an answer button is clicked, moves quiz to the next question and if there are no more questions, move to end screen
 function endTestCheck() {
   if (i == questionInfo.length) {
     showEndScreen();
