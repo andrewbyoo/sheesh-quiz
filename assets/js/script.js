@@ -157,7 +157,6 @@ function answeredCorrectly() {
   }, 2000);
   incorrect.setAttribute("class", "hidden");
   timeScore += 5;
-  timeLeft.innerHTML = timeScore
 }
 
 // When answered incorrectly, show failure message for 2 seconds and hide the congratulatory message if still displayed
@@ -169,7 +168,6 @@ function answeredIncorrectly() {
   correct.setAttribute("class", "hidden");
   // Add code to remove 5 seconds from timer and once tested and working, add to other buttons
   timeScore -= 10;
-  timeLeft.innerHTML = timeScore
 }
 
 // When an answer button is clicked, moves quiz to the next question and if there are no more questions, move to end screen
