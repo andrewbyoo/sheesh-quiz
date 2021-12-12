@@ -204,6 +204,7 @@ logScoreBtn.addEventListener("click", function () {
     initials.setAttribute("placeholder", "");
     initials.style.borderColor = "";
     logScore();
+    showScoreboard();
   }
 })
 
