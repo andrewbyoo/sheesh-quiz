@@ -14,9 +14,11 @@ var btn4 = document.getElementById("btn4");
 var correct = document.getElementById("correct");
 var incorrect = document.getElementById("incorrect");
 var endPage = document.getElementById("endPage");
+var finalScore = document.getElementById("finalScore");
 var clearBoard = document.getElementById("scoreClear");
 var i = 0;
 var timeScore = "";
+var timeInterval = "";
 
 // Quiz array of questions and answers
 var questionInfo = [
@@ -67,7 +69,7 @@ function startTimer() {
   timeLeft.innerHTML = timeScore
 
   // Use setInterval() to call execute a function every second
-  var timeInterval = setInterval(function () {
+  timeInterval = setInterval(function () {
 
     // When the timer has 1 or more seconds left
     if (timeScore >= 1) {
@@ -81,9 +83,6 @@ function startTimer() {
 
       // When timer hits 0 or lower, display 0
       timeLeft.innerHTML = "0";
-
-      // Stop timer
-      clearInterval(timeInterval);
 
       // Changes page to end page
       showEndScreen();
@@ -183,4 +182,9 @@ function endTestCheck() {
 function showEndScreen() {
   quizContainer.setAttribute("class", "hidden");
   endPage.setAttribute("class", "visible");
+
+  // Stop timer and show final time on timer and end page
+  clearInterval(timeInterval);
+  timeLeft.innerHTML = timeScore;
+  finalScore.innerHTML = "Your final score is " + timeScore + ".";
 }
