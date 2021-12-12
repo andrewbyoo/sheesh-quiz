@@ -197,10 +197,12 @@ function showEndScreen() {
 logScoreBtn.addEventListener("click", function () {
   var initialsValue = initials.value;
 
+  // If no initials are input, display a red border and add placeholder text
   if (initialsValue === "") {
     initials.setAttribute("placeholder", "Initials are required");
     initials.style.borderColor = "red";
   } else {
+    // Resets placeholder text and border color for next test run if page is not refreshed and runs the logScore and showScoreboard functions
     initials.setAttribute("placeholder", "");
     initials.style.borderColor = "";
     logScore();
@@ -208,22 +210,29 @@ logScoreBtn.addEventListener("click", function () {
   }
 })
 
+// Function to pull existing JSON array, add new score object, and then push the new JSON array back to local storage
 function logScore() {
+
+  // Pulls previous local storage
   var previousScoreStorage = JSON.parse(localStorage.getItem("scoreStorage"));
 
+  // If local storage is empty, creates a new empty array
   if (previousScoreStorage == null) {
     previousScoreStorage = [];
   }
 
+  // Defines the object with the user's initials and score
   var newScore = {
     "participant": initials.value,
-    "score": timeLeft
+    "score": timeLeft.textContent
   };
 
+  // Adds new score to the previous scores and sends the result back into local storage
   previousScoreStorage.push(newScore);
   localStorage.setItem("scoreStorage", JSON.stringify(previousScoreStorage));
 }
 
+// Function to hide the quiz end page and show the scoreboard
 function showScoreboard() {
   endPage.setAttribute("class", "hidden");
   scoreboard.setAttribute("class", "visible");
