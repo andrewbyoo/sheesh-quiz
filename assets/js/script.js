@@ -1,6 +1,7 @@
 // Defined variables
-var timer = document.getElementById("timer")
-var timeLeft = document.getElementById("timeLeft")
+var timer = document.getElementById("timer");
+var timeLabel = document.getElementById("timeLabel");
+var timeLeft = document.getElementById("timeLeft");
 var startPage = document.getElementById("startPage");
 var startButton = document.getElementById("startButton");
 var quizContainer = document.getElementById("quizContainer");
@@ -15,6 +16,7 @@ var incorrect = document.getElementById("incorrect");
 var endPage = document.getElementById("endPage");
 var clearBoard = document.getElementById("scoreClear");
 var i = 0;
+var timeScore = "";
 
 // Quiz array of questions and answers
 var questionInfo = [
@@ -43,12 +45,14 @@ var questionInfo = [
     options: ["Lorem Ipsum Q5 Answer 1", "Lorem Ipsum Q5 Answer 2", "Lorem Ipsum Q5 Answer 3", "Lorem Ipsum Q5 Answer 4"],
     correctAnswer: "Lorem Ipsum Q5 Answer 1"
   }
+  // Additional questions can be input here and will automatically fill into the quiz (Must be multiple choice with 4 options and 1 answer)
 ]
 
 // Event listener for button on splash screen to start quiz
 startButton.addEventListener("click", function () {
   startPage.setAttribute("class", "hidden");
   quizContainer.setAttribute("class", "visible");
+  startTimer();
   quiz();
 })
 
@@ -67,12 +71,12 @@ btn1.addEventListener("click", function () {
 
   // Determines if answer is correct or incorrect
   if (btn1.innerHTML == questionInfo[i-1].correctAnswer) {
-    answeredCorrectly()
+    answeredCorrectly();
   } else {
-    answeredIncorrectly()
+    answeredIncorrectly();
   }
 
-  endTestCheck()
+  endTestCheck();
 })
 
 // Answer 2 button
@@ -80,12 +84,12 @@ btn2.addEventListener("click", function () {
 
   // Determines if answer is correct or incorrect
   if (btn2.innerHTML == questionInfo[i-1].correctAnswer) {
-    answeredCorrectly()
+    answeredCorrectly();
   } else {
-    answeredIncorrectly()
+    answeredIncorrectly();
   }
 
-  endTestCheck()
+  endTestCheck();
 })
 
 // Answer 3 button
@@ -93,12 +97,12 @@ btn3.addEventListener("click", function () {
 
   // Determines if answer is correct or incorrect
   if (btn3.innerHTML == questionInfo[i-1].correctAnswer) {
-    answeredCorrectly()
+    answeredCorrectly();
   } else {
-    answeredIncorrectly()
+    answeredIncorrectly();
   }
 
-  endTestCheck()
+  endTestCheck();
 })
 
 // Answer 4 button
@@ -106,12 +110,12 @@ btn4.addEventListener("click", function () {
 
   // Determines if answer is correct or incorrect
   if (btn4.innerHTML == questionInfo[i-1].correctAnswer) {
-    answeredCorrectly()
+    answeredCorrectly();
   } else {
-    answeredIncorrectly()
+    answeredIncorrectly();
   }
 
-  endTestCheck()
+  endTestCheck();
 })
 
 // When answered correctly, show congratulatory message for 2 seconds and hide the incorrect message if still displayed
@@ -146,4 +150,39 @@ function endTestCheck() {
 function showEndScreen() {
   quizContainer.setAttribute("class", "hidden");
   endPage.setAttribute("class", "visible");
+}
+
+// Function to start timing the quiz
+function startTimer() {
+
+  // Sets the timer to be visible
+  timer.setAttribute("class", "visible");
+
+  // Sets starting value of timer and displays it on screen
+  timeScore = 60;
+  timeLeft.innerHTML = timeScore
+
+  // Use setInterval() to call execute a function every second
+  var timeInterval = setInterval(function () {
+
+    // When the timer has 1 or more seconds left
+    if (timeScore >= 1) {
+
+      // Display current time left
+      timeLeft.innerHTML = timeScore;
+
+      // Decrease time left
+      timeScore--;
+    } else {
+
+      // When timer hits 0 or lower, display 0
+      timeLeft.innerHTML = "0";
+
+      // Stop timer
+      clearInterval(timeInterval);
+
+      // Changes page to end page
+      showEndScreen();
+    }
+  }, 1000);
 }
