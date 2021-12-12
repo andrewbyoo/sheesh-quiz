@@ -15,6 +15,7 @@ var correct = document.getElementById("correct");
 var incorrect = document.getElementById("incorrect");
 var endPage = document.getElementById("endPage");
 var finalScore = document.getElementById("finalScore");
+var scoreboard = document.getElementById("scoreboard");
 var clearBoard = document.getElementById("scoreClear");
 var i = 0;
 var timeScore = "";
@@ -187,4 +188,9 @@ function showEndScreen() {
   clearInterval(timeInterval);
   timeLeft.innerHTML = timeScore;
   finalScore.innerHTML = "Your final score is " + timeScore + ".";
+}
+
+function showScoreboard() {
+  endPage.setAttribute("class", "hidden");
+  scoreboard.setAttribute("class", "visible");
 }
