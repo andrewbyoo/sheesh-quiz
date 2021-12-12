@@ -16,45 +16,64 @@ var i = 0;
 var questionInfo = [
   {
     question: "Lorem Ipsum Question 1",
-    options: ["Lorem Ipsum Answer 1", "Lorem Ipsum Answer 2", "Lorem Ipsum Answer 3", "Lorem Ipsum Answer 4"],
-    correctAnswer: "Lorem Ipsum Answer 4"
+    options: ["Lorem Ipsum Q1 Answer 1", "Lorem Ipsum Q1 Answer 2", "Lorem Ipsum Q1 Answer 3", "Lorem Ipsum Q1 Answer 4"],
+    correctAnswer: "Lorem Ipsum Q1 Answer 4"
   },
   {
     question: "Lorem Ipsum Question 2",
-    options: ["Lorem Ipsum Answer 1", "Lorem Ipsum Answer 2", "Lorem Ipsum Answer 3", "Lorem Ipsum Answer 4"],
-    correctAnswer: "Lorem Ipsum Answer 4"
+    options: ["Lorem Ipsum Q2 Answer 1", "Lorem Ipsum Q2 Answer 2", "Lorem Ipsum Q2 Answer 3", "Lorem Ipsum Q2 Answer 4"],
+    correctAnswer: "Lorem Ipsum Q2 Answer 4"
   },
   {
     question: "Lorem Ipsum Question 3",
-    options: ["Lorem Ipsum Answer 1", "Lorem Ipsum Answer 2", "Lorem Ipsum Answer 3", "Lorem Ipsum Answer 4"],
-    correctAnswer: "Lorem Ipsum Answer 4"
+    options: ["Lorem Ipsum Q3 Answer 1", "Lorem Ipsum Q3 Answer 2", "Lorem Ipsum Q3 Answer 3", "Lorem Ipsum Q3 Answer 4"],
+    correctAnswer: "Lorem Ipsum Q3 Answer 4"
   },
   {
     question: "Lorem Ipsum Question 4",
-    options: ["Lorem Ipsum Answer 1", "Lorem Ipsum Answer 2", "Lorem Ipsum Answer 3", "Lorem Ipsum Answer 4"],
-    correctAnswer: "Lorem Ipsum Answer 4"
+    options: ["Lorem Ipsum Q4 Answer 1", "Lorem Ipsum Q4 Answer 2", "Lorem Ipsum Q4 Answer 3", "Lorem Ipsum Q4 Answer 4"],
+    correctAnswer: "Lorem Ipsum Q4 Answer 4"
   },
   {
     question: "Lorem Ipsum Question 5",
-    options: ["Lorem Ipsum Answer 1", "Lorem Ipsum Answer 2", "Lorem Ipsum Answer 3", "Lorem Ipsum Answer 4"],
-    correctAnswer: "Lorem Ipsum Answer 4"
+    options: ["Lorem Ipsum Q5 Answer 1", "Lorem Ipsum Q5 Answer 2", "Lorem Ipsum Q5 Answer 3", "Lorem Ipsum Q5 Answer 4"],
+    correctAnswer: "Lorem Ipsum Q5 Answer 4"
   }
 ]
 
 // Event listener for button on splash screen to start quiz
 startButton.addEventListener("click", function () {
   startPage.setAttribute("class", "hidden");
+  quizContainer.setAttribute("class", "visible");
   quiz();
 })
 
+// Answer 1 button
+btn1.addEventListener("click", function () {
+  quiz();
+})
 
-// Function for displaying the quiz
+// Answer 2 button
+btn2.addEventListener("click", function () {
+  quiz();
+})
+
+// Answer 3 button
+btn3.addEventListener("click", function () {
+  quiz();
+})
+
+// Answer 4 button
+btn4.addEventListener("click", function () {
+  quiz();
+})
+
+// Function for displaying the each quiz question
 function quiz() {
-  quizContainer.setAttribute("class", "visible");
-
-  questions.innerHTML = questionInfo[i].question
-  btn1.innerHTML = questionInfo[i].options[0]
-  btn2.innerHTML = questionInfo[i].options[1]
-  btn3.innerHTML = questionInfo[i].options[2]
-  btn4.innerHTML = questionInfo[i].options[3]
+  questions.innerHTML = questionInfo[i].question;
+  btn1.innerHTML = questionInfo[i].options[0];
+  btn2.innerHTML = questionInfo[i].options[1];
+  btn3.innerHTML = questionInfo[i].options[2];
+  btn4.innerHTML = questionInfo[i].options[3];
+  i++;
 }
