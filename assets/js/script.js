@@ -1,4 +1,6 @@
 // Defined variables
+var timer = document.getElementById("timer")
+var timeLeft = document.getElementById("timeLeft")
 var startPage = document.getElementById("startPage");
 var startButton = document.getElementById("startButton");
 var quizContainer = document.getElementById("quizContainer");
