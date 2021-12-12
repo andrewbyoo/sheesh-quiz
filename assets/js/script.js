@@ -215,11 +215,9 @@ function logScore() {
   }
 
   var newScore = {
-    "participant": initialsValue,
+    "participant": initials.value,
     "score": timeLeft
   };
-
-  localStorage.setItem("newScore", JSON.stringify(newScore));
 
   previousScoreStorage.push(newScore);
   localStorage.setItem("scoreStorage", JSON.stringify(previousScoreStorage));
