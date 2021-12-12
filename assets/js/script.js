@@ -1,4 +1,4 @@
-// Define variables for html elements
+// Defined variables
 var startPage = document.getElementById("startPage");
 var startButton = document.getElementById("startButton");
 var quizContainer = document.getElementById("quizContainer");
@@ -10,12 +10,9 @@ var btn3 = document.getElementById("btn3");
 var btn4 = document.getElementById("btn4");
 var endPage = document.getElementById("endPage");
 var clearBoard = document.getElementById("scoreClear");
+var i = 0;
 
-startButton.addEventListener("click", function() {
-  startPage.setAttribute("class", "hidden");
-  quizContainer.setAttribute("class", "visible");
-})
-
+// Quiz array of questions and answers
 var questionInfo = [
   {
     question: "Lorem Ipsum Question 1",
@@ -44,4 +41,20 @@ var questionInfo = [
   }
 ]
 
-questions.innerHTML = questionInfo[0].question;
+// Event listener for button on splash screen to start quiz
+startButton.addEventListener("click", function () {
+  startPage.setAttribute("class", "hidden");
+  quiz();
+})
+
+
+// Function for displaying the quiz
+function quiz() {
+  quizContainer.setAttribute("class", "visible");
+
+  questions.innerHTML = questionInfo[i].question
+  btn1.innerHTML = questionInfo[i].options[0]
+  btn2.innerHTML = questionInfo[i].options[1]
+  btn3.innerHTML = questionInfo[i].options[2]
+  btn4.innerHTML = questionInfo[i].options[3]
+}
