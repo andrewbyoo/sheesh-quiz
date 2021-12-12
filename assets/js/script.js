@@ -65,14 +65,6 @@ btn1.addEventListener("click", function () {
     }, 2000);
     correct.setAttribute("class", "hidden");
   }
-
-  // if (btn1.innerHTML == questionInfo[i-1].correctAnswer) {
-  //   correct.setAttribute("class", "visible");
-  //   incorrect.setAttribute("class", "hidden");
-  // } else {
-  //   incorrect.setAttribute("class", "visible");
-  //   correct.setAttribute("class", "hidden");
-  // }
   quiz();
 })
 
@@ -80,9 +72,15 @@ btn1.addEventListener("click", function () {
 btn2.addEventListener("click", function () {
   if (btn2.innerHTML == questionInfo[i-1].correctAnswer) {
     correct.setAttribute("class", "visible");
+    setTimeout(function() {
+      correct.setAttribute("class", "hidden");
+    }, 2000);
     incorrect.setAttribute("class", "hidden");
   } else {
     incorrect.setAttribute("class", "visible");
+    setTimeout(function() {
+      incorrect.setAttribute("class", "hidden");
+    }, 2000);
     correct.setAttribute("class", "hidden");
   }
   quiz();
@@ -92,9 +90,15 @@ btn2.addEventListener("click", function () {
 btn3.addEventListener("click", function () {
   if (btn3.innerHTML == questionInfo[i-1].correctAnswer) {
     correct.setAttribute("class", "visible");
+    setTimeout(function() {
+      correct.setAttribute("class", "hidden");
+    }, 2000);
     incorrect.setAttribute("class", "hidden");
   } else {
     incorrect.setAttribute("class", "visible");
+    setTimeout(function() {
+      incorrect.setAttribute("class", "hidden");
+    }, 2000);
     correct.setAttribute("class", "hidden");
   }
   quiz();
@@ -104,9 +108,15 @@ btn3.addEventListener("click", function () {
 btn4.addEventListener("click", function () {
   if (btn4.innerHTML == questionInfo[i-1].correctAnswer) {
     correct.setAttribute("class", "visible");
+    setTimeout(function() {
+      correct.setAttribute("class", "hidden");
+    }, 2000);
     incorrect.setAttribute("class", "hidden");
   } else {
     incorrect.setAttribute("class", "visible");
+    setTimeout(function() {
+      incorrect.setAttribute("class", "hidden");
+    }, 2000);
     correct.setAttribute("class", "hidden");
   }
   quiz();
