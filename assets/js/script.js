@@ -69,11 +69,7 @@ btn1.addEventListener("click", function () {
     // Add code to remove 5 seconds from timer and once tested and working, add to other buttons
   }
 
-  if (i == questionInfo.length) {
-    showEndScreen();
-  } else {
-    quiz();
-  }
+  endTestCheck()
 })
 
 // Answer 2 button
@@ -84,11 +80,7 @@ btn2.addEventListener("click", function () {
     answeredIncorrectly()
   }
 
-  if (i == questionInfo.length) {
-    showEndScreen();
-  } else {
-    quiz();
-  }
+  endTestCheck()
 })
 
 // Answer 3 button
@@ -99,11 +91,7 @@ btn3.addEventListener("click", function () {
     answeredIncorrectly()
   }
 
-  if (i == questionInfo.length) {
-    showEndScreen();
-  } else {
-    quiz();
-  }
+  endTestCheck()
 })
 
 // Answer 4 button
@@ -114,11 +102,7 @@ btn4.addEventListener("click", function () {
     answeredIncorrectly()
   }
 
-  if (i == questionInfo.length) {
-    showEndScreen();
-  } else {
-    quiz();
-  }
+  endTestCheck()
 })
 
 // What occurs when a question is answered correctly
@@ -137,6 +121,14 @@ function answeredIncorrectly() {
     incorrect.setAttribute("class", "hidden");
   }, 2000);
   correct.setAttribute("class", "hidden");
+}
+
+function endTestCheck() {
+  if (i == questionInfo.length) {
+    showEndScreen();
+  } else {
+    quiz();
+  }
 }
 
 // Function to hide quiz and show the end screen
