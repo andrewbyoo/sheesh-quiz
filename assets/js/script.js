@@ -64,8 +64,13 @@ btn1.addEventListener("click", function () {
       incorrect.setAttribute("class", "hidden");
     }, 2000);
     correct.setAttribute("class", "hidden");
+    // Add code to remove 5 seconds from timer and once tested and working, add to other buttons
   }
-  quiz();
+  if (i == questionInfo.length) {
+    showEndScreen();
+  } else {
+    quiz();
+  }
 })
 
 // Answer 2 button
@@ -130,4 +135,9 @@ function quiz() {
   btn3.innerHTML = questionInfo[i].options[2];
   btn4.innerHTML = questionInfo[i].options[3];
   i++;
+}
+
+function showEndScreen() {
+  quizContainer.setAttribute("class", "hidden");
+  endPage.setAttribute("class", "visible");
 }
