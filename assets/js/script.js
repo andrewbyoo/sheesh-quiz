@@ -56,6 +56,41 @@ startButton.addEventListener("click", function () {
   quiz();
 })
 
+// Function to start timing the quiz
+function startTimer() {
+
+  // Sets the timer to be visible
+  timer.setAttribute("class", "visible");
+
+  // Sets starting value of timer and displays it on screen
+  timeScore = 60;
+  timeLeft.innerHTML = timeScore
+
+  // Use setInterval() to call execute a function every second
+  var timeInterval = setInterval(function () {
+
+    // When the timer has 1 or more seconds left
+    if (timeScore >= 1) {
+
+      // Display current time left
+      timeLeft.innerHTML = timeScore;
+
+      // Decrease time left
+      timeScore--;
+    } else {
+
+      // When timer hits 0 or lower, display 0
+      timeLeft.innerHTML = "0";
+
+      // Stop timer
+      clearInterval(timeInterval);
+
+      // Changes page to end page
+      showEndScreen();
+    }
+  }, 1000);
+}
+
 // Function for displaying the each quiz question
 function quiz() {
   questions.innerHTML = questionInfo[i].question;
@@ -75,7 +110,6 @@ btn1.addEventListener("click", function () {
   } else {
     answeredIncorrectly();
   }
-
   endTestCheck();
 })
 
@@ -88,7 +122,6 @@ btn2.addEventListener("click", function () {
   } else {
     answeredIncorrectly();
   }
-
   endTestCheck();
 })
 
@@ -101,7 +134,6 @@ btn3.addEventListener("click", function () {
   } else {
     answeredIncorrectly();
   }
-
   endTestCheck();
 })
 
@@ -114,7 +146,6 @@ btn4.addEventListener("click", function () {
   } else {
     answeredIncorrectly();
   }
-
   endTestCheck();
 })
 
@@ -150,39 +181,4 @@ function endTestCheck() {
 function showEndScreen() {
   quizContainer.setAttribute("class", "hidden");
   endPage.setAttribute("class", "visible");
-}
-
-// Function to start timing the quiz
-function startTimer() {
-
-  // Sets the timer to be visible
-  timer.setAttribute("class", "visible");
-
-  // Sets starting value of timer and displays it on screen
-  timeScore = 60;
-  timeLeft.innerHTML = timeScore
-
-  // Use setInterval() to call execute a function every second
-  var timeInterval = setInterval(function () {
-
-    // When the timer has 1 or more seconds left
-    if (timeScore >= 1) {
-
-      // Display current time left
-      timeLeft.innerHTML = timeScore;
-
-      // Decrease time left
-      timeScore--;
-    } else {
-
-      // When timer hits 0 or lower, display 0
-      timeLeft.innerHTML = "0";
-
-      // Stop timer
-      clearInterval(timeInterval);
-
-      // Changes page to end page
-      showEndScreen();
-    }
-  }, 1000);
 }
