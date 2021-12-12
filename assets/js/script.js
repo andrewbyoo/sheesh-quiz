@@ -54,11 +54,25 @@ startButton.addEventListener("click", function () {
 btn1.addEventListener("click", function () {
   if (btn1.innerHTML == questionInfo[i-1].correctAnswer) {
     correct.setAttribute("class", "visible");
+    setTimeout(function() {
+      correct.setAttribute("class", "hidden");
+    }, 2000);
     incorrect.setAttribute("class", "hidden");
   } else {
     incorrect.setAttribute("class", "visible");
+    setTimeout(function() {
+      incorrect.setAttribute("class", "hidden");
+    }, 2000);
     correct.setAttribute("class", "hidden");
   }
+
+  // if (btn1.innerHTML == questionInfo[i-1].correctAnswer) {
+  //   correct.setAttribute("class", "visible");
+  //   incorrect.setAttribute("class", "hidden");
+  // } else {
+  //   incorrect.setAttribute("class", "visible");
+  //   correct.setAttribute("class", "hidden");
+  // }
   quiz();
 })
 
