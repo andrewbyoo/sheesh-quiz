@@ -66,6 +66,10 @@ cursor: pointer;
 border-radius: 10px;
 }
 
+#scoreList {
+  margin-left: -40px;
+}
+
 #scoreList li:nth-child(even) {
 background-color: #95C8D8;
 }
