@@ -184,12 +184,25 @@ function endTestCheck() {
 
 // Function to hide quiz and show the end screen
 function showEndScreen() {
+
+  // Hides quiz page
   quizContainer.setAttribute("class", "hidden");
-  endPage.setAttribute("class", "visible");
 
   // Stop timer and show final time on timer and end page
   clearInterval(timeInterval);
+
+  // If score goes below 0, sets score to 0
+  if (timeScore < 0) {
+    timeScore = 0;
+  }
+
+  // Shows final time on corner timer
   timeLeft.innerHTML = timeScore;
+
+  // Shows end page
+  endPage.setAttribute("class", "visible");
+
+  // Adds final score/time on the end page
   finalScore.innerHTML = "Your final score is " + timeScore + ".";
 }
 
