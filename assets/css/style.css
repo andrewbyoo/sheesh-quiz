@@ -17,3 +17,7 @@ header {
 header a, header aside, header aside p, header aside summary {
   display: inline;
 }
+
+header a:visited {
+  color: #137EA0;
+}
