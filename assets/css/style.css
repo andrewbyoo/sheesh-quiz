@@ -1,3 +1,8 @@
+/* Add google fonts to whole page with built in font as fallback */
+* {
+  font-family: Montserrat, Barlow, sans-serif;
+}
+
 /* Sets hidden class to not be display */
 .hidden {
   display: none;
@@ -12,7 +17,6 @@
 }
 
 body {
-  margin: 0px;
   padding: 0px;
   width: 100%;
 }
