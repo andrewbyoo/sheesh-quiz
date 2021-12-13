@@ -264,6 +264,8 @@ function logScore() {
 // Function to hide the quiz end page and show the scoreboard
 function showScoreboard() {
   endPage.setAttribute("class", "hidden");
+  correct.setAttribute("class", "hidden");
+  incorrect.setAttribute("class", "hidden");
 
   // Adds list item for each score listed in local storage
   for (i = 0; i < scoreStorage.length; i++) {
@@ -286,4 +288,12 @@ restartBtn.addEventListener("click", function () {
   startTimer();
   i = 0;
   quiz();
+})
+
+
+clearBoard.addEventListener("click", function () {
+  localStorage.clear();
+  while (scoreList.firstChild) {
+    scoreList.removeChild(scoreList.firstChild);
+  }
 })
