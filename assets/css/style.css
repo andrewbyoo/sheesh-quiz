@@ -14,10 +14,15 @@ header {
   justify-content: space-between;
 }
 
-header a, header aside, header aside p, header aside summary {
+header a {
   display: inline;
+  color: #137EA0;
 }
 
 header a:visited {
   color: #137EA0;
+}
+
+header aside, header aside p, header aside summary {
+  display: inline;
 }
