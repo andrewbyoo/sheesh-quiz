@@ -1,7 +1,6 @@
 // Defined variables
 var showScoreLnk = document.getElementById("showScoreLnk")
 var timer = document.getElementById("timer");
-var timeLabel = document.getElementById("timeLabel");
 var timeLeft = document.getElementById("timeLeft");
 var startPage = document.getElementById("startPage");
 var startButton = document.getElementById("startButton");
