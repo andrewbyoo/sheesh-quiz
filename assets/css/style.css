@@ -65,3 +65,11 @@ margin: 3px;
 cursor: pointer;
 border-radius: 10px;
 }
+
+#scoreList li:nth-child(even) {
+background-color: #95C8D8;
+}
+
+#scoreList li:nth-child(odd) {
+background-color: #0C82A7;
+}
