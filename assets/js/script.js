@@ -222,8 +222,19 @@ function showEndScreen() {
   finalScore.innerHTML = "Your final score is " + timeScore + ".";
 }
 
+initials.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    initialsCheck();
+  }
+})
+
 // Button function to log final score
 logScoreBtn.addEventListener("click", function () {
+  initialsCheck()
+})
+
+function initialsCheck() {
   var initialsValue = initials.value;
 
   // If no initials are input, display a red border and add placeholder text
@@ -237,7 +248,7 @@ logScoreBtn.addEventListener("click", function () {
     logScore();
     showScoreboard();
   }
-})
+}
 
 // Function to pull existing JSON array, add new score object, and then push the new JSON array back to local storage
 function logScore() {
@@ -283,10 +294,13 @@ restartBtn.addEventListener("click", function () {
   // Hides splash screen
   scoreboard.setAttribute("class", "hidden");
 
-  // Shows quiz and starts the timer
+  // Shows quiz at first question, starts the timer, and preps the scoreboard
   quizContainer.setAttribute("class", "visible");
   startTimer();
   i = 0;
+  while (scoreList.firstChild) {
+    scoreList.removeChild(scoreList.firstChild);
+  }
   quiz();
 })
 
