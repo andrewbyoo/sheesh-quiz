@@ -263,12 +263,13 @@ function logScore() {
 
   // Defines the object with the user's initials and score
   var newScore = {
-    "participant": initials.value,
+    "participant": initials.value.toUpperCase(),
     "score": timeLeft.textContent
   };
 
-  // Adds new score to the previous scores and sends the result back into local storage
+  // Adds new score to the previous scores, sorts the results from highest score to lowest score, and sends the result back into local storage
   scoreStorage.push(newScore);
+  scoreStorage.sort((a, b) => b.score - a.score);
   localStorage.setItem("scoreStorage", JSON.stringify(scoreStorage));
 }
 
