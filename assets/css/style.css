@@ -5,9 +5,17 @@
 
 /* Sets visible class to display element */
 .visible {
-  display: block;
+  display: inline-block;
+  margin-top: 60px;
+  width: 512px;
+  text-align: left;
 }
 
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
 
 header {
   display: flex;
@@ -23,6 +31,19 @@ header a:visited {
   color: #137EA0;
 }
 
-header aside, header aside p, header aside summary {
+header aside {
+  display: none;
+}
+
+header aside p, header aside summary {
   display: inline;
+}
+
+main {
+  text-align: center;
+  width: 100%;
+}
+
+#startPage {
+  text-align: center;
 }
