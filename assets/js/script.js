@@ -321,7 +321,7 @@ restartBtn.addEventListener("click", function () {
   quiz();
 })
 
-
+// Event listener for clear scoreboard button to clear the visible board and local storage
 clearBoard.addEventListener("click", function () {
   localStorage.clear();
   while (scoreList.firstChild) {
