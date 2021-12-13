@@ -1,4 +1,5 @@
 // Defined variables
+var showScoreLnk = document.getElementById("showScoreLnk")
 var timer = document.getElementById("timer");
 var timeLabel = document.getElementById("timeLabel");
 var timeLeft = document.getElementById("timeLeft");
@@ -54,9 +55,28 @@ var questionInfo = [
   // Additional questions can be input here and will automatically fill into the quiz (Must be multiple choice with 4 options and 1 answer)
 ]
 
+// Link to show scoreboard without logging a score
+showScoreLnk.addEventListener("click", function () {
+
+  // Stop timer if link is clicked mid quiz
+  clearInterval(timeInterval);
+
+  // Clears time if link is clicked mid or post quiz
+  timeScore = "";
+
+  // Hides splash page or quiz if pre or mid quiz and moves to the score board
+  startPage.setAttribute("class", "hidden");
+  quizContainer.setAttribute("class", "hidden");
+  showScoreboard();
+})
+
 // Event listener for button on splash screen to start quiz
 startButton.addEventListener("click", function () {
+
+  // Hides splash screen
   startPage.setAttribute("class", "hidden");
+
+  // Shows quiz and starts the timer
   quizContainer.setAttribute("class", "visible");
   startTimer();
   quiz();
@@ -101,6 +121,8 @@ function quiz() {
   btn2.innerHTML = questionInfo[i].options[1];
   btn3.innerHTML = questionInfo[i].options[2];
   btn4.innerHTML = questionInfo[i].options[3];
+
+  // Preps the quiz for the next question
   i++;
 }
 
@@ -169,7 +191,6 @@ function answeredIncorrectly() {
     incorrect.setAttribute("class", "hidden");
   }, 2000);
   correct.setAttribute("class", "hidden");
-  // Add code to remove 5 seconds from timer and once tested and working, add to other buttons
   timeScore -= 10;
 }
 
