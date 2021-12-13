@@ -1,58 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Sheesh Quiz</title>
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
   <header>
     <a href="#" id="showScoreLnk">View previous scores</a>
-    <aside class="hidden" id="timer">
+    <aside id="timer">
       <p id="timeLabel">Time:</p>
       <summary id="timeLeft">00</summary>
     </aside>
   </header>
 
-  <section class="visible" id="startPage">
-    <h1>Sheesh quiz</h1>
-    <p>Lorem Ipsum sheesh quiz start page</p>
-    <p>Try to answer all the questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds but if you answer correctly, you'll gain 5 seconds back!</p>
-    <button id="startButton">Take the quiz</button>
-  </section>
+  <main>
+    <section class="visible" id="startPage">
+      <h1>Sheesh quiz</h1>
+      <p>Lorem Ipsum sheesh quiz start page</p>
+      <p>Try to answer all the questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds but if you answer correctly, you'll gain 5 seconds back!</p>
+      <button id="startButton">Take the quiz</button>
+    </section>
 
-  <section class="hidden" id="quizContainer">
-    <h1 id="questions">Question</h1>
-    <ol id="answers">
-      <li><button id="btn1">Answer 1</button></li>
-      <li><button id="btn2">Answer 2</button></li>
-      <li><button id="btn3">Answer 3</button></li>
-      <li><button id="btn4">Answer 4</button></li>
-    </ol>
-  </section>
+    <section class="hidden" id="quizContainer">
+      <h1 id="questions">Question</h1>
+      <ol id="answers">
+        <li><button id="btn1">Answer 1</button></li>
+        <li><button id="btn2">Answer 2</button></li>
+        <li><button id="btn3">Answer 3</button></li>
+        <li><button id="btn4">Answer 4</button></li>
+      </ol>
+    </section>
 
-  <section class="hidden" id="endPage">
-    <h1>Quiz Complete!</h1>
-    <p id="finalScore">Your final score is ____.</p>
-    <article>
-      <p>User Initials: </p>
-      <input type="text" name="initials" placeholder="" id="initials">
-      <button id="logScoreBtn">Submit</button>
-    </article>
-  </section>
+    <section class="hidden" id="endPage">
+      <h1>Quiz Complete!</h1>
+      <p id="finalScore">Your final score is ____.</p>
+      <article>
+        <p>User Initials: </p>
+        <input type="text" name="initials" placeholder="" id="initials">
+        <button id="logScoreBtn">Submit</button>
+      </article>
+    </section>
 
-  <section class="hidden" id="scoreboard">
-    <h1>Scoreboard</h1>
-    <ol></ol>
-    <button class="startButton">Restart the quiz</button>
-    <button id="scoreClear">Clear scoreboard</button>
-  </section>
+    <section class="hidden" id="scoreboard">
+      <h1>Scoreboard</h1>
+      <ol></ol>
+      <button class="startButton">Restart the quiz</button>
+      <button id="scoreClear">Clear scoreboard</button>
+    </section>
 
-  <footer>
-    <p class="hidden" id="correct">Correct answer message</p>
-    <p class="hidden" id="incorrect">Incorrect answer message</p>
-  </footer>
+    <section>
+      <p class="hidden" id="correct">Correct answer message</p>
+      <p class="hidden" id="incorrect">Incorrect answer message</p>
+    </section>
+  </main>
 
   <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
