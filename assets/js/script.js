@@ -65,6 +65,11 @@ showScoreLnk.addEventListener("click", function () {
   // Clears time if link is clicked mid or post quiz
   timeScore = "";
 
+  // Clears the visual scoreboard to allow for the updated scores to be displayed
+  while (scoreList.firstChild) {
+    scoreList.removeChild(scoreList.firstChild);
+  }
+
   // Hides splash page or quiz if pre or mid quiz and moves to the score board
   startPage.setAttribute("class", "hidden");
   quizContainer.setAttribute("class", "hidden");
@@ -91,7 +96,7 @@ function startTimer() {
 
   // Sets starting value of timer and displays it on screen
   timeScore = 60;
-  timeLeft.innerHTML = timeScore
+  timeLeft.innerHTML = timeScore;
 
   // Use setInterval() to call execute a function every second
   timeInterval = setInterval(function () {
@@ -278,6 +283,9 @@ function showScoreboard() {
   endPage.setAttribute("class", "hidden");
   correct.setAttribute("class", "hidden");
   incorrect.setAttribute("class", "hidden");
+
+  // Pulls most up to date scores from local storage
+  scoreStorage = JSON.parse(localStorage.getItem("scoreStorage"));
 
   // Adds list item for each score listed in local storage
   if (scoreStorage.length < 10) {
