@@ -16,50 +16,61 @@
   text-align: left;
 }
 
+/* Sets page to display to whole window */
 body {
   padding: 0px;
   width: 100%;
 }
 
+/* Makes View top 10 scores link and timer on opposite corners at the top of the screen */
 header {
   display: flex;
   justify-content: space-between;
 }
 
+/* Changes font color and positioning */
 header a {
   display: inline;
   color: #137EA0;
 }
 
+/* Sets link to not change color when clicked */
 header a:visited {
   color: #137EA0;
 }
 
+/* Hides the timer by default */
 header aside {
   display: none;
 }
 
+/* Sets timer to be display inline */
 header aside p, header aside summary {
   display: inline;
 }
 
+/* Sets main content to be in the middle of the window */
 main {
   text-align: center;
   width: 100%;
 }
 
+/* Sets text of the start page to be centered */
 #startPage {
   text-align: center;
 }
 
+/* Sets font size of questions */
 h2 {
   font-size: 23px;
 }
 
+/* Sets User Initials, text field, and submit button to be displayed inline  */
 #endPage article > * {
   display: inline;
 }
 
+/* Sets style of every button on the web page */
 button {
 background-color: #137EA0;
 border: none;
@@ -70,30 +81,35 @@ cursor: pointer;
 border-radius: 10px;
 }
 
+/* Sets the list to be left aligned with the scoreboard title and sets width of the score window */
 #scoreList {
   margin-left: -40px;
-  width: 260px;
+  width: 315px;
 }
 
+/* Sets padding of scores in list */
 #scoreList li {
-  padding: 5px 5px;
+  padding: 7px 10px;
+  list-style-position: inside;
 }
 
-#scoreList li:nth-child(even) {
-background-color: #95C8D8;
-list-style-position: inside;
-}
-
+/* Sets the odd li background color */
 #scoreList li:nth-child(odd) {
-background-color: #29a1c5;
-list-style-position: inside;
+  background-color: #29a1c5;
 }
 
+/* Sets the even li background color */
+#scoreList li:nth-child(even) {
+  background-color: #95C8D8;
+}
+
+/* Sets border radius on the top of the scoreboard */
 #scoreList li:first-child {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 
+/* Sets border radius on the bottom of the scoreboard */
 #scoreList li:last-child {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
