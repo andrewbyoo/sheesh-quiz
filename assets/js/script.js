@@ -23,8 +23,8 @@ var scoreList = document.getElementById("scoreList");
 var restartBtn = document.getElementById("restartBtn");
 var clearBoard = document.getElementById("scoreClear");
 var i = 0;
-var timeScore = "";
-var timeInterval = "";
+var timeScore;
+var timeInterval;
 
 // Quiz array of questions and answers
 var questionInfo = [
@@ -99,11 +99,11 @@ function startTimer() {
     // When the timer has 1 or more seconds left
     if (timeScore >= 1) {
 
-      // Display current time left
-      timeLeft.innerHTML = timeScore;
-
       // Decrease time left
       timeScore--;
+
+      // Display current time left
+      timeLeft.innerHTML = timeScore;
     } else {
 
       // When timer hits 0 or lower, display 0
