@@ -86,7 +86,7 @@ startButton.addEventListener("click", function () {
 function startTimer() {
 
   // Sets the timer to be visible
-  timer.setAttribute("class", "visible");
+  timer.style.display = "inline";
 
   // Sets starting value of timer and displays it on screen
   timeScore = 60;
