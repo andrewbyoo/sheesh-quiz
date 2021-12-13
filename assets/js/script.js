@@ -19,6 +19,7 @@ var initials = document.getElementById("initials");
 var logScoreBtn = document.getElementById("logScoreBtn");
 var scoreStorage = [];
 var scoreboard = document.getElementById("scoreboard");
+var scoreList = document.getElementById("scoreList");
 var clearBoard = document.getElementById("scoreClear");
 var i = 0;
 var timeScore = "";
@@ -241,11 +242,11 @@ logScoreBtn.addEventListener("click", function () {
 function logScore() {
 
   // Pulls previous local storage
-  var previousScoreStorage = JSON.parse(localStorage.getItem("scoreStorage"));
+  scoreStorage = JSON.parse(localStorage.getItem("scoreStorage"));
 
   // If local storage is empty, creates a new empty array
-  if (previousScoreStorage == null) {
-    previousScoreStorage = [];
+  if (scoreStorage == null) {
+    scoreStorage = [];
   }
 
   // Defines the object with the user's initials and score
@@ -255,12 +256,19 @@ function logScore() {
   };
 
   // Adds new score to the previous scores and sends the result back into local storage
-  previousScoreStorage.push(newScore);
-  localStorage.setItem("scoreStorage", JSON.stringify(previousScoreStorage));
+  scoreStorage.push(newScore);
+  localStorage.setItem("scoreStorage", JSON.stringify(scoreStorage));
 }
 
 // Function to hide the quiz end page and show the scoreboard
 function showScoreboard() {
   endPage.setAttribute("class", "hidden");
+
+  for (i = 0; i < scoreStorage.length; i++) {
+    var newli = document.createElement("li");
+    newli.innerHTML = scoreStorage[i].participant + " - " + scoreStorage[i].score;
+    scoreList.appendChild(newli)
+  }
+
   scoreboard.setAttribute("class", "visible");
 }
