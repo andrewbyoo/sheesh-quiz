@@ -177,9 +177,6 @@ btn4.addEventListener("click", function () {
 // When answered correctly, show congratulatory message for 2 seconds and hide the incorrect message if still displayed
 function answeredCorrectly() {
   correct.setAttribute("class", "visible");
-  setTimeout(function() {
-    correct.setAttribute("class", "hidden");
-  }, 2000);
   incorrect.setAttribute("class", "hidden");
   timeScore += 5;
 }
@@ -187,9 +184,6 @@ function answeredCorrectly() {
 // When answered incorrectly, show failure message for 2 seconds and hide the congratulatory message if still displayed
 function answeredIncorrectly() {
   incorrect.setAttribute("class", "visible");
-  setTimeout(function() {
-    incorrect.setAttribute("class", "hidden");
-  }, 2000);
   correct.setAttribute("class", "hidden");
   timeScore -= 10;
 }
