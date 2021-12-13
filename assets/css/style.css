@@ -68,12 +68,29 @@ border-radius: 10px;
 
 #scoreList {
   margin-left: -40px;
+  width: 260px;
+}
+
+#scoreList li {
+  padding: 5px 5px;
 }
 
 #scoreList li:nth-child(even) {
 background-color: #95C8D8;
+list-style-position: inside;
 }
 
 #scoreList li:nth-child(odd) {
-background-color: #0C82A7;
+background-color: #29a1c5;
+list-style-position: inside;
+}
+
+#scoreList li:first-child {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+#scoreList li:last-child {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
