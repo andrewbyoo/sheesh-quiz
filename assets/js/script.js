@@ -280,10 +280,18 @@ function showScoreboard() {
   incorrect.setAttribute("class", "hidden");
 
   // Adds list item for each score listed in local storage
-  for (i = 0; i < scoreStorage.length; i++) {
-    var newli = document.createElement("li");
-    newli.innerHTML = scoreStorage[i].participant + " - " + scoreStorage[i].score;
-    scoreList.appendChild(newli)
+  if (scoreStorage.length < 10) {
+    for (i = 0; i < scoreStorage.length; i++) {
+      var newli = document.createElement("li");
+      newli.innerHTML = scoreStorage[i].participant + " - " + scoreStorage[i].score;
+      scoreList.appendChild(newli);
+    }
+  } else {
+    for (i = 0; i < 10; i++) {
+      var newli = document.createElement("li");
+      newli.innerHTML = scoreStorage[i].participant + " - " + scoreStorage[i].score;
+      scoreList.appendChild(newli);
+    }
   }
 
   scoreboard.setAttribute("class", "visible");
