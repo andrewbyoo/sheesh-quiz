@@ -7,7 +7,7 @@
 .visible {
   display: inline-block;
   margin-top: 60px;
-  width: 512px;
+  width: 650px;
   text-align: left;
 }
 
@@ -46,4 +46,8 @@ main {
 
 #startPage {
   text-align: center;
+}
+
+h2 {
+  font-size: 23px;
 }
