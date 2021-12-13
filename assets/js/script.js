@@ -3,7 +3,7 @@ var showScoreLnk = document.getElementById("showScoreLnk")
 var timer = document.getElementById("timer");
 var timeLeft = document.getElementById("timeLeft");
 var startPage = document.getElementById("startPage");
-var startButton = document.getElementById("startButton");
+var startBtn = document.getElementById("startBtn");
 var quizContainer = document.getElementById("quizContainer");
 var questions = document.getElementById("questions");
 var answers = document.getElementById("answers");
@@ -20,6 +20,7 @@ var logScoreBtn = document.getElementById("logScoreBtn");
 var scoreStorage = [];
 var scoreboard = document.getElementById("scoreboard");
 var scoreList = document.getElementById("scoreList");
+var restartBtn = document.getElementById("restartBtn");
 var clearBoard = document.getElementById("scoreClear");
 var i = 0;
 var timeScore = "";
@@ -71,7 +72,7 @@ showScoreLnk.addEventListener("click", function () {
 })
 
 // Event listener for button on splash screen to start quiz
-startButton.addEventListener("click", function () {
+startBtn.addEventListener("click", function () {
 
   // Hides splash screen
   startPage.setAttribute("class", "hidden");
@@ -264,6 +265,7 @@ function logScore() {
 function showScoreboard() {
   endPage.setAttribute("class", "hidden");
 
+  // Adds list item for each score listed in local storage
   for (i = 0; i < scoreStorage.length; i++) {
     var newli = document.createElement("li");
     newli.innerHTML = scoreStorage[i].participant + " - " + scoreStorage[i].score;
@@ -272,3 +274,16 @@ function showScoreboard() {
 
   scoreboard.setAttribute("class", "visible");
 }
+
+// Event listener for restart button on scoreboard page to restart quiz
+restartBtn.addEventListener("click", function () {
+
+  // Hides splash screen
+  scoreboard.setAttribute("class", "hidden");
+
+  // Shows quiz and starts the timer
+  quizContainer.setAttribute("class", "visible");
+  startTimer();
+  i = 0;
+  quiz();
+})
