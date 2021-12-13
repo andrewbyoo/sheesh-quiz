@@ -6,7 +6,6 @@ var startPage = document.getElementById("startPage");
 var startBtn = document.getElementById("startBtn");
 var quizContainer = document.getElementById("quizContainer");
 var questions = document.getElementById("questions");
-var answers = document.getElementById("answers");
 var btn1 = document.getElementById("btn1");
 var btn2 = document.getElementById("btn2");
 var btn3 = document.getElementById("btn3");
