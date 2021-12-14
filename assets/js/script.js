@@ -28,29 +28,49 @@ var timeInterval;
 // Quiz array of questions and answers
 var questionInfo = [
   {
-    question: "Lorem Ipsum Question 1",
-    options: ["Lorem Ipsum Q1 Answer 1", "Lorem Ipsum Q1 Answer 2", "Lorem Ipsum Q1 Answer 3", "Lorem Ipsum Q1 Answer 4"],
-    correctAnswer: "Lorem Ipsum Q1 Answer 1"
+    question: "What species is Elira?",
+    options: ["Forest Fairy", "Solar Sky Dragon", "Lunar Sky Dragon", "Tropical Mermaid"],
+    correctAnswer: "Solar Sky Dragon"
   },
   {
-    question: "Lorem Ipsum Question 2",
-    options: ["Lorem Ipsum Q2 Answer 1", "Lorem Ipsum Q2 Answer 2", "Lorem Ipsum Q2 Answer 3", "Lorem Ipsum Q2 Answer 4"],
-    correctAnswer: "Lorem Ipsum Q2 Answer 2"
+    question: "What VTuber agency does Elira work for?",
+    options: ["Hololive", "Tsunderia", "Nijisanji", "VShojo"],
+    correctAnswer: "Nijisanji"
   },
   {
-    question: "Lorem Ipsum Question 3",
-    options: ["Lorem Ipsum Q3 Answer 1", "Lorem Ipsum Q3 Answer 2", "Lorem Ipsum Q3 Answer 3", "Lorem Ipsum Q3 Answer 4"],
-    correctAnswer: "Lorem Ipsum Q3 Answer 3"
+    question: "What is the name of Elira's companion?",
+    options: ["Pomu", "Pikl", "Petra", "Ember"],
+    correctAnswer: "Pikl"
   },
   {
-    question: "Lorem Ipsum Question 4",
-    options: ["Lorem Ipsum Q4 Answer 1", "Lorem Ipsum Q4 Answer 2", "Lorem Ipsum Q4 Answer 3", "Lorem Ipsum Q4 Answer 4"],
-    correctAnswer: "Lorem Ipsum Q4 Answer 4"
+    question: "Who, canonically, is Elira's sister?",
+    options: ["Selen Tatsuki", "Finana Ryugu", "Petra Gurin", "Enna Alouette"],
+    correctAnswer: "Selen Tatsuki"
   },
   {
-    question: "Lorem Ipsum Question 5",
-    options: ["Lorem Ipsum Q5 Answer 1", "Lorem Ipsum Q5 Answer 2", "Lorem Ipsum Q5 Answer 3", "Lorem Ipsum Q5 Answer 4"],
-    correctAnswer: "Lorem Ipsum Q5 Answer 1"
+    question: "What is the first song Elira and her gen-mates released?",
+    options: ["Black Out", "Diamond City Lights", "Trial and Error", "intro reality"],
+    correctAnswer: "Diamond City Lights"
+  },
+  {
+    question: "What is the name of Elira's generation?",
+    options: ["Ethyria", "OBSYDIA", "3SetBBQ", "LazuLight"],
+    correctAnswer: "LazuLight"
+  },
+  {
+    question: "What is the name of Elira's fanbase?",
+    options: ["Famlira", "Dragoons", "PenPals", "Piklites"],
+    correctAnswer: "Famlira"
+  },
+  {
+    question: "What is the name of Elira's membership?",
+    options: ["Sheesh", "Sheeshclub", "Membersheesh", "Submarsheesh"],
+    correctAnswer: "Membersheesh"
+  },
+  {
+    question: "What is Elira's birthday?",
+    options: ["September 16th", "September 26th", "October 26th", "October 16th"],
+    correctAnswer: "October 16th"
   }
   // Additional questions can be input here and will automatically fill into the quiz (Must be multiple choice with 4 options and 1 answer)
 ]
@@ -94,7 +114,7 @@ function startTimer() {
   timer.style.display = "inline";
 
   // Sets starting value of timer and displays it on screen
-  timeScore = 60;
+  timeScore = 90;
   timeLeft.innerHTML = timeScore;
 
   // Use setInterval() to call execute a function every second
@@ -246,10 +266,11 @@ function initialsCheck() {
     initials.setAttribute("placeholder", "Initials are required");
     initials.style.borderColor = "red";
   } else {
-    // Resets placeholder text and border color for next test run if page is not refreshed and runs the logScore and showScoreboard functions
+    // Resets text and border color for next test run if page is not refreshed and runs the logScore and showScoreboard functions
     initials.setAttribute("placeholder", "");
     initials.style.borderColor = "";
     logScore();
+    initials.value = "";
     showScoreboard();
   }
 }
