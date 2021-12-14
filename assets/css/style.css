@@ -26,6 +26,7 @@ body {
 header {
   display: flex;
   justify-content: space-between;
+  margin: 10px;
 }
 
 /* Changes font color and positioning */
