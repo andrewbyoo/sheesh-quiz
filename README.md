@@ -15,7 +15,7 @@ The following are the features that were implemented:
 * Link to take you to the scoreboard no matter where you are.
 
 ## Link
-https://andrewyoo93.github.io/sheesh-quiz/
+https://andrewbyoo.github.io/sheesh-quiz/
 
 
 ## License
